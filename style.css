@@ -1,0 +1,339 @@
+/* ============================================================
+   Aaron Ortega — gateway
+   Editorial dark-pastel. Fraunces display · Hanken Grotesk body.
+   Complementary palette: dusty teal · lavender · rose · warm gold
+   ============================================================ */
+
+:root {
+  /* base — deep warm ink */
+  --ink:        #14131a;
+  --ink-2:      #1b1923;
+  --panel:      #211f2b;
+  --line:       rgba(236, 230, 216, 0.10);
+  --line-soft:  rgba(236, 230, 216, 0.06);
+
+  /* type */
+  --cream:      #ece6d8;
+  --cream-dim:  #b6b0c0;
+  --muted:      #7e7990;
+
+  /* dark-pastel accents — masculine earthy/cool spread
+     (var names kept; values retuned: pine · slate-blue · clay · bronze) */
+  --teal:       #5fa08f;   /* muted pine */
+  --lavender:   #7d9bbd;   /* slate blue */
+  --rose:       #c98a6a;   /* terracotta clay */
+  --gold:       #c39a5e;   /* muted bronze */
+
+  --shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.85);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  color: var(--cream);
+  background: var(--ink);
+  background-image:
+    radial-gradient(60vw 50vw at 12% 8%,  rgba(95, 160, 143, 0.15), transparent 60%),
+    radial-gradient(55vw 50vw at 88% 18%, rgba(125, 155, 189, 0.15), transparent 62%),
+    radial-gradient(60vw 55vw at 78% 92%, rgba(201, 138, 106, 0.13), transparent 60%),
+    radial-gradient(50vw 50vw at 18% 96%, rgba(195, 154, 94, 0.10), transparent 60%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* film grain overlay */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   Layout
+   ============================================================ */
+.stage {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: clamp(2.5rem, 6vw, 6rem) clamp(1.5rem, 5vw, 5rem) 7rem;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+/* ---------- Identity ---------- */
+.portrait {
+  position: relative;
+  width: clamp(96px, 12vw, 132px);
+  aspect-ratio: 1;
+  margin-bottom: 2rem;
+}
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 74%;
+  border-radius: 50%;
+  filter: saturate(1.05) contrast(1.02);
+}
+.portrait-ring {
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  background: conic-gradient(from 220deg,
+      var(--teal), var(--lavender), var(--rose), var(--gold), var(--teal));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+          mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+  opacity: 0.9;
+  animation: spin 18s linear infinite;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  margin-bottom: 1.4rem;
+}
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 0 0 rgba(95, 160, 143, 0.6);
+  animation: pulse 2.6s ease-out infinite;
+}
+
+.name {
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: clamp(3.4rem, 9vw, 6.2rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+.name em {
+  font-style: normal;
+  font-weight: 600;
+  background: linear-gradient(105deg, var(--rose), var(--lavender) 55%, var(--teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.blurb {
+  max-width: 30rem;
+  margin-top: 1.7rem;
+  font-size: 1.06rem;
+  line-height: 1.65;
+  color: var(--cream-dim);
+}
+.ilink {
+  color: var(--cream);
+  text-decoration: none;
+  padding-bottom: 1px;
+  background:
+    linear-gradient(var(--teal), var(--teal)) left bottom / 100% 1.5px no-repeat;
+  transition: color 0.25s ease, background-size 0.25s ease;
+}
+.ilink:hover { color: var(--teal); }
+
+.locale {
+  margin-top: 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ---------- Gateway links ---------- */
+.gateway {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+.link {
+  --accent: var(--teal);
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1.4rem 1.5rem 0.4rem;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--cream);
+  isolation: isolate;
+  overflow: hidden;
+  transition: padding-left 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link[data-accent="teal"]     { --accent: var(--teal); }
+.link[data-accent="lavender"] { --accent: var(--lavender); }
+.link[data-accent="rose"]     { --accent: var(--rose); }
+.link[data-accent="gold"]     { --accent: var(--gold); }
+
+/* accent flood */
+.link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,
+      color-mix(in oklab, var(--accent) 16%, transparent),
+      transparent 70%);
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.link:hover::before,
+.link:focus-visible::before { opacity: 1; transform: none; }
+.link:hover, .link:focus-visible { padding-left: 1.3rem; outline: none; }
+
+.idx {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--muted);
+  transition: color 0.3s ease;
+}
+.link:hover .idx { color: var(--accent); }
+
+.link-body { display: flex; flex-direction: column; gap: 0.2rem; }
+.link-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+.link:hover .link-name { color: var(--accent); }
+.link-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  vertical-align: middle;
+  color: var(--ink);
+  background: var(--accent);
+  padding: 0.16em 0.5em;
+  border-radius: 5px;
+  margin-left: 0.4rem;
+}
+.arrow {
+  font-size: 1.2rem;
+  color: var(--muted);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
+}
+.link:hover .arrow {
+  color: var(--accent);
+  transform: translate(4px, -4px) rotate(0deg);
+}
+.link--feature { background: var(--line-soft); }
+
+/* ---------- Marquee ---------- */
+.ticker {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 0.9rem 0;
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+/* spacing lives on items (not flex gap) so the -50% wrap is seamless */
+.ticker-track > span { padding: 0 0.7rem; }
+.ticker-track .sep { color: var(--teal); }
+
+.copyright {
+  position: fixed;
+  bottom: 1rem;
+  left: 1.25rem;
+  z-index: 3;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  mix-blend-mode: difference;
+}
+
+/* ============================================================
+   Motion
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes rise { to { opacity: 1; transform: none; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(111, 184, 175, 0.5); }
+  70%  { box-shadow: 0 0 0 9px rgba(111, 184, 175, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(111, 184, 175, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; animation: none; }
+  .portrait-ring, .ticker-track, .dot { animation: none; }
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 860px) {
+  .stage {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 2.5rem;
+    padding-top: clamp(3rem, 12vw, 5rem);
+    min-height: auto;
+  }
+  .gateway { border-top: none; }
+  .name { font-size: clamp(3.2rem, 16vw, 5rem); }
+}
+
+@media (max-width: 460px) {
+  .link { gap: 0.9rem; padding-right: 0.8rem; }
+  .link-name { font-size: 1.4rem; }
+  .blurb { font-size: 1rem; }
+}
