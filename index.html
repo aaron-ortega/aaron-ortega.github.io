@@ -20,7 +20,8 @@
     <!-- ===== Left: identity ===== -->
     <section class="identity">
       <div class="portrait reveal" style="--d: 0ms">
-        <img src="profile.jpg" alt="Portrait of Aaron Ortega" />
+        <img src="profile.jpg" alt="Portrait of Aaron Ortega" draggable="false" />
+        <span class="portrait-guard" aria-hidden="true"></span>
         <span class="portrait-ring" aria-hidden="true"></span>
       </div>
 
@@ -103,6 +104,9 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelector('.portrait')
+      ?.addEventListener('contextmenu', (e) => e.preventDefault());
   </script>
 </body>
 </html>
