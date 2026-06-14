@@ -1,112 +1,189 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aaron Ortega — Software &amp; Data Engineer</title>
-  <meta name="description" content="Aaron Ortega — Senior Software & Data Engineer in El Paso, TX. Links, resume, and contact." />
-  <meta property="og:title" content="Aaron Ortega — Software & Data Engineer" />
-  <meta property="og:description" content="Backend APIs, event-driven systems, and scalable data pipelines." />
-  <meta property="og:image" content="profile.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="grain" aria-hidden="true"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aaron Ortega — Software &amp; Data Engineer</title>
+    <meta
+      name="description"
+      content="Aaron Ortega — Senior Software & Data Engineer in El Paso, TX. Links, resume, and contact."
+    />
+    <meta name="theme-color" content="#14131a" />
 
-  <main class="stage">
-    <!-- ===== Left: identity ===== -->
-    <section class="identity">
-      <div class="portrait reveal" style="--d: 0ms">
-        <img src="profile.jpg" alt="Portrait of Aaron Ortega" draggable="false" />
-        <span class="portrait-guard" aria-hidden="true"></span>
-        <span class="portrait-ring" aria-hidden="true"></span>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aaron Ortega — Software & Data Engineer" />
+    <meta
+      property="og:description"
+      content="Backend APIs, event-driven systems, and scalable data pipelines."
+    />
+    <meta property="og:image" content="assets/img/profile.jpg" />
+
+    <!-- Favicon (inline SVG monogram) -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314131a'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%235fa08f' text-anchor='middle'%3EAO%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <main class="stage">
+      <!-- ===== Identity ===== -->
+      <header class="identity">
+        <div class="portrait reveal" style="--d: 0ms">
+          <img src="assets/img/profile.jpg" alt="Portrait of Aaron Ortega" draggable="false" />
+          <span class="portrait-guard" aria-hidden="true"></span>
+          <span class="portrait-ring" aria-hidden="true"></span>
+        </div>
+
+        <p class="eyebrow reveal" style="--d: 80ms">
+          <span class="dot" aria-hidden="true"></span> Software &amp; Data Engineer
+        </p>
+
+        <h1 class="name reveal" style="--d: 160ms">Aaron<br /><em>Ortega</em></h1>
+
+        <p class="blurb reveal" style="--d: 240ms">
+          I build backend APIs, event-driven systems, and scalable data pipelines. Currently at
+          <a class="ilink" href="https://agentsync.io/" target="_blank" rel="noopener noreferrer"
+            >AgentSync</a
+          >
+          — previously a founding data hire at
+          <a
+            class="ilink"
+            href="https://www.farmersfridge.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Farmer&apos;s Fridge</a
+          >. M.S. Physics,
+          <a
+            class="ilink"
+            href="https://www.uchicago.edu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >University&nbsp;of&nbsp;Chicago</a
+          >.
+        </p>
+
+        <p class="locale reveal" style="--d: 320ms">
+          <span aria-hidden="true">◇</span> El Paso, Texas
+        </p>
+      </header>
+
+      <!-- ===== Gateway links ===== -->
+      <nav class="gateway" aria-label="Profile and social links">
+        <a
+          class="link reveal"
+          data-accent="teal"
+          style="--d: 360ms"
+          href="https://github.com/aaron-ortega"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="idx">01</span>
+          <span class="link-body">
+            <span class="link-name"
+              >GitHub<span class="visually-hidden"> (opens in a new tab)</span></span
+            >
+            <span class="link-meta">@aaron-ortega</span>
+          </span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a
+          class="link reveal"
+          data-accent="lavender"
+          style="--d: 430ms"
+          href="https://linkedin.com/in/aortega04"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="idx">02</span>
+          <span class="link-body">
+            <span class="link-name"
+              >LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></span
+            >
+            <span class="link-meta">in/aortega04</span>
+          </span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a
+          class="link reveal"
+          data-accent="rose"
+          style="--d: 500ms"
+          href="mailto:aaortega18@gmail.com"
+        >
+          <span class="idx">03</span>
+          <span class="link-body">
+            <span class="link-name">Email</span>
+            <span class="link-meta">aaortega18@gmail.com</span>
+          </span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a
+          class="link link-feature reveal"
+          data-accent="gold"
+          style="--d: 570ms"
+          href="assets/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="idx">04</span>
+          <span class="link-body">
+            <span class="link-name"
+              >Résumé <span class="tag">PDF</span
+              ><span class="visually-hidden"> (opens in a new tab)</span></span
+            >
+            <span class="link-meta">View &amp; download</span>
+          </span>
+          <span class="arrow" aria-hidden="true">↓</span>
+        </a>
+      </nav>
+    </main>
+
+    <!-- ===== Footer: skills marquee + credit ===== -->
+    <footer class="site-footer">
+      <div class="ticker reveal" style="--d: 650ms" aria-hidden="true">
+        <div class="ticker-track">
+          <span>Python</span><span class="sep">/</span><span>Go</span><span class="sep">/</span
+          ><span>Java</span><span class="sep">/</span><span>SQL</span><span class="sep">/</span
+          ><span>Snowflake</span><span class="sep">/</span><span>dbt</span><span class="sep">/</span
+          ><span>Dagster</span><span class="sep">/</span><span>Kafka</span><span class="sep">/</span
+          ><span>Terraform</span><span class="sep">/</span><span>AWS</span><span class="sep">/</span
+          ><span>PostgreSQL</span><span class="sep">/</span><span>Spark</span
+          ><span class="sep">/</span> <span>Python</span><span class="sep">/</span><span>Go</span
+          ><span class="sep">/</span><span>Java</span><span class="sep">/</span><span>SQL</span
+          ><span class="sep">/</span><span>Snowflake</span><span class="sep">/</span><span>dbt</span
+          ><span class="sep">/</span><span>Dagster</span><span class="sep">/</span><span>Kafka</span
+          ><span class="sep">/</span><span>Terraform</span><span class="sep">/</span><span>AWS</span
+          ><span class="sep">/</span><span>PostgreSQL</span><span class="sep">/</span
+          ><span>Spark</span><span class="sep">/</span>
+        </div>
       </div>
+      <p class="copyright">© <span id="year"></span> Aaron Ortega</p>
+    </footer>
 
-      <p class="eyebrow reveal" style="--d: 80ms">
-        <span class="dot" aria-hidden="true"></span> Software &amp; Data Engineer
-      </p>
+    <script>
+      // Footer year
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      <h1 class="name reveal" style="--d: 160ms">
-        Aaron<br /><em>Ortega</em>
-      </h1>
-
-      <p class="blurb reveal" style="--d: 240ms">
-        I build backend APIs, event-driven systems, and scalable data
-        pipelines. Currently at
-        <a class="ilink" href="https://agentsync.io/" target="_blank" rel="noopener">AgentSync</a>
-        — previously a founding data hire at
-        <a class="ilink" href="https://www.farmersfridge.com/" target="_blank" rel="noopener">Farmer&apos;s Fridge</a>.
-        M.S. Physics,
-        <a class="ilink" href="https://www.uchicago.edu/" target="_blank" rel="noopener">University&nbsp;of&nbsp;Chicago</a>.
-      </p>
-
-      <p class="locale reveal" style="--d: 320ms">
-        <span aria-hidden="true">◇</span> El Paso, Texas
-      </p>
-    </section>
-
-    <!-- ===== Right: gateway links ===== -->
-    <nav class="gateway" aria-label="Links">
-      <a class="link reveal" data-accent="teal" style="--d: 360ms"
-         href="https://github.com/aaron-ortega" target="_blank" rel="noopener">
-        <span class="idx">01</span>
-        <span class="link-body">
-          <span class="link-name">GitHub</span>
-          <span class="link-meta">@aaron-ortega</span>
-        </span>
-        <span class="arrow" aria-hidden="true">↗</span>
-      </a>
-
-      <a class="link reveal" data-accent="lavender" style="--d: 430ms"
-         href="https://linkedin.com/in/aortega04" target="_blank" rel="noopener">
-        <span class="idx">02</span>
-        <span class="link-body">
-          <span class="link-name">LinkedIn</span>
-          <span class="link-meta">in/aortega04</span>
-        </span>
-        <span class="arrow" aria-hidden="true">↗</span>
-      </a>
-
-      <a class="link reveal" data-accent="rose" style="--d: 500ms"
-         href="mailto:aaortega18@gmail.com">
-        <span class="idx">03</span>
-        <span class="link-body">
-          <span class="link-name">Email</span>
-          <span class="link-meta">aaortega18@gmail.com</span>
-        </span>
-        <span class="arrow" aria-hidden="true">↗</span>
-      </a>
-
-      <a class="link link--feature reveal" data-accent="gold" style="--d: 570ms"
-         href="resume.pdf" target="_blank" rel="noopener">
-        <span class="idx">04</span>
-        <span class="link-body">
-          <span class="link-name">Résumé <span class="tag">PDF</span></span>
-          <span class="link-meta">View &amp; download</span>
-        </span>
-        <span class="arrow" aria-hidden="true">↓</span>
-      </a>
-    </nav>
-  </main>
-
-  <!-- ===== Marquee of craft ===== -->
-  <footer class="ticker reveal" style="--d: 650ms" aria-hidden="true">
-    <div class="ticker-track">
-      <span>Python</span><span class="sep">/</span><span>Go</span><span class="sep">/</span><span>Java</span><span class="sep">/</span><span>SQL</span><span class="sep">/</span><span>Snowflake</span><span class="sep">/</span><span>dbt</span><span class="sep">/</span><span>Dagster</span><span class="sep">/</span><span>Kafka</span><span class="sep">/</span><span>Terraform</span><span class="sep">/</span><span>AWS</span><span class="sep">/</span><span>PostgreSQL</span><span class="sep">/</span><span>Spark</span><span class="sep">/</span>
-      <span>Python</span><span class="sep">/</span><span>Go</span><span class="sep">/</span><span>Java</span><span class="sep">/</span><span>SQL</span><span class="sep">/</span><span>Snowflake</span><span class="sep">/</span><span>dbt</span><span class="sep">/</span><span>Dagster</span><span class="sep">/</span><span>Kafka</span><span class="sep">/</span><span>Terraform</span><span class="sep">/</span><span>AWS</span><span class="sep">/</span><span>PostgreSQL</span><span class="sep">/</span><span>Spark</span><span class="sep">/</span>
-    </div>
-  </footer>
-
-  <span class="copyright">© <span id="year"></span></span>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    document.querySelector('.portrait')
-      ?.addEventListener('contextmenu', (e) => e.preventDefault());
-  </script>
-</body>
+      // Light deterrent: block right-click "Save image as" on the portrait
+      document
+        .querySelector(".portrait")
+        ?.addEventListener("contextmenu", (e) => e.preventDefault());
+    </script>
+  </body>
 </html>
