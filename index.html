@@ -24,6 +24,7 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314131a'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%235fa08f' text-anchor='middle'%3EAO%3C/text%3E%3C/svg%3E"
     />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,6 +35,42 @@
     />
 
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Structured data (schema.org Person) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Aaron Ortega",
+        "jobTitle": "Software & Data Engineer",
+        "description": "Backend APIs, event-driven systems, and scalable data pipelines.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "El Paso",
+          "addressRegion": "TX",
+          "addressCountry": "US"
+        },
+        "worksFor": { "@type": "Organization", "name": "AgentSync" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Chicago" },
+        "knowsAbout": [
+          "Data Engineering",
+          "REST APIs",
+          "Event-driven systems",
+          "Data pipelines",
+          "Python",
+          "Go",
+          "SQL",
+          "Java",
+          "Snowflake",
+          "dbt",
+          "Airflow",
+          "Kafka",
+          "Terraform",
+          "AWS"
+        ],
+        "sameAs": ["https://github.com/aaron-ortega", "https://linkedin.com/in/aortega04"]
+      }
+    </script>
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
@@ -42,7 +79,13 @@
       <!-- ===== Identity ===== -->
       <header class="identity">
         <div class="portrait reveal" style="--d: 0ms">
-          <img src="assets/img/profile.jpg" alt="Portrait of Aaron Ortega" draggable="false" />
+          <img
+            src="assets/img/profile.jpg"
+            alt="Portrait of Aaron Ortega"
+            width="2316"
+            height="3088"
+            draggable="false"
+          />
           <span class="portrait-guard" aria-hidden="true"></span>
           <span class="portrait-ring" aria-hidden="true"></span>
         </div>
@@ -132,6 +175,11 @@
           <span class="link-body">
             <span class="link-name">Email</span>
             <span class="link-meta" id="email-meta" aria-live="polite">Click to copy</span>
+            <noscript>
+              <span class="link-meta"
+                >Email requires JavaScript — reach me via GitHub or LinkedIn</span
+              >
+            </noscript>
           </span>
           <span class="arrow" aria-hidden="true">⧉</span>
         </a>
