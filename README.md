@@ -9,7 +9,7 @@ index.html              # the page (markup + small inline script)
 assets/
   css/style.css         # styling (dark editorial theme, responsive)
   img/profile.jpg       # portrait
-  resume.pdf            # downloadable resume (synced from ../resume/output/resume-_main.pdf)
+  resume.pdf            # downloadable resume
 ```
 
 ## Local preview
