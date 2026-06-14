@@ -1,4 +1,4 @@
-# resume-website
+# me
 
 Single-page personal site — plain HTML and CSS with a small inline script, no build step, ready for GitHub Pages.
 
