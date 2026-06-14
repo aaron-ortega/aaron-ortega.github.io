@@ -122,14 +122,18 @@
           class="link reveal"
           data-accent="rose"
           style="--d: 500ms"
-          href="mailto:aaortega18@gmail.com"
+          id="email-link"
+          data-e="YWFvcnRlZ2ExOCtyZXN1bWVAZ21haWwuY29t"
+          href="#"
+          role="button"
+          aria-label="Copy email address to clipboard"
         >
           <span class="idx">03</span>
           <span class="link-body">
             <span class="link-name">Email</span>
-            <span class="link-meta">aaortega18@gmail.com</span>
+            <span class="link-meta" id="email-meta" aria-live="polite">click to copy</span>
           </span>
-          <span class="arrow" aria-hidden="true">↗</span>
+          <span class="arrow" aria-hidden="true">⧉</span>
         </a>
 
         <a
@@ -180,10 +184,59 @@
       const yearEl = document.getElementById("year");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // Light deterrent: block right-click "Save image as" on the portrait
+      // Light portrait deterrent
       document
         .querySelector(".portrait")
         ?.addEventListener("contextmenu", (e) => e.preventDefault());
+
+      // Email (anti-harvest); copied to clipboard on click
+      const emailBtn = document.getElementById("email-link");
+      if (emailBtn) {
+        const emailMeta = document.getElementById("email-meta");
+        const idle = emailMeta ? emailMeta.textContent : "";
+
+        const copy = async (text) => {
+          try {
+            await navigator.clipboard.writeText(text);
+            return true;
+          } catch {
+            const ta = document.createElement("textarea");
+            ta.value = text;
+            ta.setAttribute("readonly", "");
+            ta.style.position = "fixed";
+            ta.style.left = "-9999px";
+            document.body.appendChild(ta);
+            ta.select();
+            let ok = false;
+            try {
+              ok = document.execCommand("copy");
+            } catch {
+              ok = false;
+            }
+            document.body.removeChild(ta);
+            return ok;
+          }
+        };
+
+        emailBtn.addEventListener("click", async (e) => {
+          e.preventDefault();
+          const ok = await copy(atob(emailBtn.dataset.e));
+          if (emailMeta) {
+            emailMeta.textContent = ok ? "Copied to clipboard ✓" : "Copy failed — try again";
+            setTimeout(() => {
+              emailMeta.textContent = idle;
+            }, 2000);
+          }
+        });
+
+        // role="button": activate on Space too (Enter already fires the anchor)
+        emailBtn.addEventListener("keydown", (e) => {
+          if (e.key === " ") {
+            e.preventDefault();
+            emailBtn.click();
+          }
+        });
+      }
     </script>
   </body>
 </html>
