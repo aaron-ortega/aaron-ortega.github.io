@@ -1,0 +1,29 @@
+{
+  "name": "resume-website",
+  "version": "1.0.0",
+  "description": "Single-page personal site. Plain HTML/CSS, no build step, ready for GitHub Pages.",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:css:fix": "stylelint \"**/*.css\" --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaron-ortega/resume-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aaron-ortega/resume-website/issues"
+  },
+  "homepage": "https://github.com/aaron-ortega/resume-website#readme",
+  "devDependencies": {
+    "prettier": "^3.8.4",
+    "stylelint": "^17.13.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}
