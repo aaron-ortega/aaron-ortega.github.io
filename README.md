@@ -1,7 +1,6 @@
 # resume-website
 
-Single-page personal site for Aaron Ortega — a gateway to socials and a place to
-view/download the resume. Plain HTML/CSS/JS, no build step, ready for GitHub Pages.
+Single-page personal site with plain HTML/CSS/JS, no build step, ready for GitHub Pages.
 
 ## Structure
 
@@ -33,9 +32,3 @@ npm run lint:css   # stylelint **/*.css
 
 Repo must be **public** for free GitHub Pages. Once public:
 Settings → Pages → Source: `Deploy from a branch` → `main` / `root`.
-
-## Updating the resume PDF
-
-```bash
-cp ../resume/output/resume-_main.pdf assets/resume.pdf
-```
