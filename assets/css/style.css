@@ -215,6 +215,17 @@ body {
   gap: 0.5rem;
 }
 
+/* Discreet — reads as plain text; only hints on hover */
+.locale a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.locale a:hover {
+  color: var(--cream-dim);
+}
+
 /* ---------- Gateway links ---------- */
 .gateway {
   display: flex;
