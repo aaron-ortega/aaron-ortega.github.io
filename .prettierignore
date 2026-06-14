@@ -1,4 +1,6 @@
 node_modules
 package-lock.json
-assets/resume.pdf
+.claude/
+assets/*.pdf
 assets/img/
+assets/icons/
