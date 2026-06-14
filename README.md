@@ -1,15 +1,16 @@
 # resume-website
 
-Single-page personal site with plain HTML/CSS/JS, no build step, ready for GitHub Pages.
+Single-page personal site — plain HTML and CSS with a small inline script, no build step, ready for GitHub Pages.
 
 ## Structure
 
 ```
-index.html              # the page (markup + small inline script)
+index.html                    # the page (markup + small inline script)
 assets/
-  css/style.css         # styling (dark editorial theme, responsive)
-  img/profile.jpg       # portrait
-  resume.pdf            # downloadable resume
+  css/style.css               # styling (dark editorial theme, responsive)
+  img/profile.jpg             # portrait
+  icons/apple-touch-icon.png  # iOS home-screen icon
+  ortega-resume-june2026.pdf  # downloadable resume
 ```
 
 ## Local preview

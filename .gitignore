@@ -1,1 +1,8 @@
+# AI assistant data
+.claude/
+
+# JavaScript dependencies
 node_modules/
+
+# Mac OS metadata files
+.DS_Store

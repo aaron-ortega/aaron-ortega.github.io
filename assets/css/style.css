@@ -15,7 +15,7 @@
   /* type */
   --cream: #ece6d8;
   --cream-dim: #b6b0c0;
-  --muted: #7e7990;
+  --muted: #847f94;
 
   /* dark-pastel accents — masculine earthy/cool spread
      (var names kept; values retuned: pine · slate-blue · clay · bronze) */
@@ -61,7 +61,6 @@ body {
     radial-gradient(55vw 50vw at 88% 18%, rgb(125 155 189 / 15%), transparent 62%),
     radial-gradient(60vw 55vw at 78% 92%, rgb(201 138 106 / 13%), transparent 60%),
     radial-gradient(50vw 50vw at 18% 96%, rgb(195 154 94 / 10%), transparent 60%);
-  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
   overflow-x: hidden;
