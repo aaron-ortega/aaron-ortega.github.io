@@ -10,7 +10,6 @@ assets/
   css/style.css               # styling (dark editorial theme, responsive)
   img/profile.jpg             # portrait
   icons/apple-touch-icon.png  # iOS home-screen icon
-  ortega-resume-june2026.pdf  # downloadable resume
 ```
 
 ## Local preview

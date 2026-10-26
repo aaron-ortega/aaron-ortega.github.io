@@ -359,10 +359,6 @@ body {
   transform: translate(4px, -4px) rotate(0deg);
 }
 
-.link-feature {
-  background: var(--line-soft);
-}
-
 /* ---------- Footer: marquee + credit ---------- */
 .site-footer {
   position: relative;
